@@ -9,7 +9,7 @@ Bucket of Hot Water
 
 Tea (Basic)
 	-Shapeless Craft: Bucket of Hot Water + 1 Tree Leaves Block (Compatible with Forestry/BoP/XBXL?)
-	-Clears all Buffs, Debuffs, all Potions effects.
+	-Clears all Buffs, Debuffs, all Potions effects, Heals player for 1 full heart (2 HP)
 
 Tree Breeding/Harvesting:
 	-Several ideas, just have to choose one.
