@@ -4,13 +4,6 @@ A mod of breedable Teas, functioning similarly to potions creating buffs and deb
 
 Items:
 
-Bucket of Hot Water
-	-Smelt Water Bucket
-
-Tea (Basic)
-	-Shapeless Craft: Bucket of Hot Water + 1 Tree Leaves Block (Compatible with Forestry/BoP/XBXL?)
-	-Clears all Buffs, Debuffs, all Potions effects, Heals player for 1 full heart (2 HP)
-
 Tree Breeding/Harvesting:
 	-Camellias (Seeds)
 		-Found naturally in certain biomes.
@@ -23,8 +16,15 @@ Tree Breeding/Harvesting:
 		-First Block of Camellia plant takes longer to grow, Second block shorter time
 		-On Growth from Stage 1 to 2, Check Blocks underneath the tilled earth for special "Nutrition" blocks. Giving the harvested tea leaves special effects when brewing.
 
-Making Tea:
-	-Make Tea Cup item? Or use vanilla bottles?
-	-Tea Kettle Block?
-	-Do not register any Teas as Forge Fluids, except possibly basic tea.
-		
+Brewing Tea:
+	-Fill Cauldron with water
+	-Dump Tea Leaves/Leaf Bundles into Cauldron (throw tile entity)
+	-Water turns to 3 Tea "Drinks" Harvestable by Tea Cups or Thermoses
+
+	-2 Tea Vessel Items: Cup and Thermos
+		-Cup holds one "Drink" do not stack, made by Cauldron shape of either clay or bricks.
+		-Thermos holds 9 "Drinks" of one tea = 3 Brews.
+
+
+Tea Effects:
+	-Tea Harvested can have 3 effects based on Nutrition Blocks under the Camellia plant.
