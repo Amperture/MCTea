@@ -1,0 +1,24 @@
+MineCraft Mod MCTea Design Rough Draft
+
+A mod of breedable Teas, functioning similarly to potions creating buffs and debuffs.
+
+Items:
+
+Bucket of Hot Water
+	-Smelt Water Bucket
+
+Tea (Basic)
+	-Shapeless Craft: Bucket of Hot Water + 1 Tree Leaves Block (Compatible with Forestry/BoP/XBXL?)
+	-Clears all Buffs, Debuffs, all Potions effects.
+
+Tree Breeding/Harvesting:
+	-Several ideas, just have to choose one.
+		-Tea seeds work like vanilla crops, but need fenceposts for the Tea Vines to grow upward through. Harvestable via Shears.
+		-Tea Trees, harvest leaves via shears.
+		-Shapeless Craft vanilla leaves to get Tea Leaves, craft Tea Leaves with buff-based items to receive potion buffs from teas.
+
+Making Tea:
+	-Make Tea Cup item? Or use vanilla bottles?
+	-Tea Kettle Block?
+	-Do not register any Teas as Forge Fluids, except possibly basic tea.
+		
