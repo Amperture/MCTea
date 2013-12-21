@@ -12,10 +12,16 @@ Tea (Basic)
 	-Clears all Buffs, Debuffs, all Potions effects, Heals player for 1 full heart (2 HP)
 
 Tree Breeding/Harvesting:
-	-Several ideas, just have to choose one.
-		-Tea seeds work like vanilla crops, but need fenceposts for the Tea Vines to grow upward through. Harvestable via Shears.
-		-Tea Trees, harvest leaves via shears.
-		-Shapeless Craft vanilla leaves to get Tea Leaves, craft Tea Leaves with buff-based items to receive potion buffs from teas.
+	-Camellias (Seeds)
+		-Found naturally in certain biomes.
+		-OR Seeds found in same way as Wheat Seeds.
+
+	-Planting Camellias
+		-Three Stage Plant
+		-Grows two blocks tall, only top block returns brewable tea leaves.
+			-Stages 0, 1, 2
+		-First Block of Camellia plant takes longer to grow, Second block shorter time
+		-On Growth from Stage 1 to 2, Check Blocks underneath the tilled earth for special "Nutrition" blocks. Giving the harvested tea leaves special effects when brewing.
 
 Making Tea:
 	-Make Tea Cup item? Or use vanilla bottles?
