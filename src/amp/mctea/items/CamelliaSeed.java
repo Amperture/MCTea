@@ -1,12 +1,11 @@
 package amp.mctea.items;
 
-import amp.mctea.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 
-public class CamelliaSeed extends Item {
-	public CamelliaSeed(int id) {
-		super(id);
+public class CamelliaSeed extends ItemSeeds{
+	public CamelliaSeed(int id, int plantId, int soilId) {
+		super(id, plantId, soilId);
 		setCreativeTab(CreativeTabs.tabMisc);
 		setMaxStackSize(64);
 		setUnlocalizedName("seedCamellia");

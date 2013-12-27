@@ -1,10 +1,11 @@
 package amp.mctea;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
-import amp.mctea.blocks.BlockTestBlock;
+import net.minecraftforge.common.MinecraftForge;
+import amp.mctea.blocks.BlockCamelliaCrop;
 import amp.mctea.items.CamelliaSeed;
 import amp.mctea.lib.Reference;
 import amp.mctea.proxy.CommonProxy;
@@ -16,7 +17,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
@@ -32,7 +32,8 @@ public class MCTea {
 	
 	public static Block testBlock;
 	public static Item testItem;
-	public static Item seedsCamellia;
+	public static Block camelliaCrop;
+	public static ItemSeeds seedsCamellia;
 	
 	@Instance( Reference.MOD_ID )
 	public static MCTea instance;
@@ -69,41 +70,12 @@ public class MCTea {
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 		
-		/* 
-		//Next 3 lines are referencing a new "Test Block" item.
-		testBlock = new BlockTestBlock(500, Material.rock).setUnlocalizedName("testBlock");
-		GameRegistry.registerBlock(testBlock, Reference.MOD_ID + testBlock.getUnlocalizedName().substring(5));
-		LanguageRegistry.addName(testBlock, "Test Block");
-		// Test Block
+		camelliaCrop = new BlockCamelliaCrop(500);
 		
-		// "Test Item"
-		testItem = new TestItem(5000).setUnlocalizedName("testItem");
-		LanguageRegistry.addName(testItem, "Test Item");
-		// End "Test Item"
-		
-		// Test Shapeless Crafting Recipe
-		GameRegistry.addShapelessRecipe(new ItemStack(testBlock), new Object[]
-		{
-			new ItemStack(Item.diamond), new ItemStack(Block.stone), new ItemStack(Item.dyePowder, 1, 15) 
-		});
-		// End Test Shapeless Recipe
-		
-		//Test Crafting Recipe
-		GameRegistry.addRecipe(new ItemStack(testBlock), new Object[]{
-			"XZX",
-			"CXC",
-			'X', Item.ingotGold,
-			'C', Block.stone,
-			'Z', new ItemStack(Item.dyePowder, 1, 15)
-		});
-		//Test Crafting Recipe
-		 * 
-		 * 
-		 */
-
-		seedsCamellia = new CamelliaSeed(5000);
+		seedsCamellia = new CamelliaSeed(5000, camelliaCrop.blockID, Block.tilledField.blockID);
 		LanguageRegistry.addName(seedsCamellia, "Camellia Seeds");
-		
+		MinecraftForge.addGrassSeed(new ItemStack(seedsCamellia), 10);
+				
 		proxy.registerRenderers();
 
 	}
