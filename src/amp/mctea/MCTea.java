@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import amp.mctea.blocks.BlockCamelliaCrop;
 import amp.mctea.items.CamelliaSeed;
+import amp.mctea.items.CupFull;
 import amp.mctea.items.TeaLeaf;
 import amp.mctea.lib.Reference;
 import amp.mctea.proxy.CommonProxy;
@@ -36,6 +37,7 @@ public class MCTea {
 	public static Block camelliaCrop;
 	public static ItemSeeds seedsCamellia;
 	public static Item teaLeaf;
+	public static Item cupFull;
 	
 	@Instance( Reference.MOD_ID )
 	public static MCTea instance;
@@ -81,6 +83,10 @@ public class MCTea {
 		
 		teaLeaf = new TeaLeaf(501);
 		LanguageRegistry.addName(teaLeaf, "Tea Leaf");
+		
+		cupFull = new CupFull(502);
+		LanguageRegistry.addName(cupFull, "Cup of Tea");
+		
 				
 		proxy.registerRenderers();
 

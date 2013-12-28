@@ -15,7 +15,7 @@ public class BlockCamelliaCrop extends BlockCrops{
 		super(id);
 		setCreativeTab(CreativeTabs.tabMisc);
 		setUnlocalizedName("camelliaCrop");
-		setHardness(0.5F);
+		setHardness(0.1F);
 	}
 	
 	@Override
@@ -42,14 +42,19 @@ public class BlockCamelliaCrop extends BlockCrops{
 		if(player.getHeldItem().itemID == Item.shears.itemID){
 			
 			int cropMeta = world.getBlockMetadata(x, y, z);
-			if (cropMeta >= 7){
+			if (cropMeta == 7){
 				
 				if ( world.isRemote ) return true;
 
 				world.setBlock(x, y, z, blockID, 1, 3);
-				EntityItem leafEntity = new EntityItem(world, x, y, z, new ItemStack(MCTea.teaLeaf.itemID, 3, 0));
+				EntityItem leafEntity = new EntityItem(world, x, y, z, new ItemStack(MCTea.teaLeaf.itemID, 1, 0));
 				world.spawnEntityInWorld(leafEntity);
 				world.playSoundAtEntity(player, "mob.sheep.shear", 1.0f, 1.2f);
+				
+				//Kinda wish I wasn't pointing the damgeItem function at the Player as a LivingEntity...
+				//Look into alternative methods of damaging the Shears.
+				player.getHeldItem().damageItem(1, player);
+				
 				return true;
 			}
 		} return false;
