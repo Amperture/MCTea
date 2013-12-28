@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import amp.mctea.blocks.BlockCamelliaCrop;
 import amp.mctea.items.CamelliaSeed;
+import amp.mctea.items.TeaLeaf;
 import amp.mctea.lib.Reference;
 import amp.mctea.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -34,6 +35,7 @@ public class MCTea {
 	public static Item testItem;
 	public static Block camelliaCrop;
 	public static ItemSeeds seedsCamellia;
+	public static Item teaLeaf;
 	
 	@Instance( Reference.MOD_ID )
 	public static MCTea instance;
@@ -71,10 +73,14 @@ public class MCTea {
 	public void init(FMLInitializationEvent event){
 		
 		camelliaCrop = new BlockCamelliaCrop(500);
+		LanguageRegistry.addName(camelliaCrop, "Camellia Plant");
 		
 		seedsCamellia = new CamelliaSeed(5000, camelliaCrop.blockID, Block.tilledField.blockID);
 		LanguageRegistry.addName(seedsCamellia, "Camellia Seeds");
 		MinecraftForge.addGrassSeed(new ItemStack(seedsCamellia), 10);
+		
+		teaLeaf = new TeaLeaf(501);
+		LanguageRegistry.addName(teaLeaf, "Tea Leaf");
 				
 		proxy.registerRenderers();
 
@@ -84,7 +90,4 @@ public class MCTea {
 	public void postInit(FMLPostInitializationEvent event){
 		
 	}
-	
-		
-	
-}	
+}
