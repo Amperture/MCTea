@@ -42,7 +42,7 @@ public class MCTea {
 	@Instance( Reference.MOD_ID )
 	public static MCTea instance;
 	
-	@SidedProxy(clientSide = "amp.mctea.proxy.ClientProxy", serverSide = "amp.mctea.preoxy.CommonProxy")
+	@SidedProxy(clientSide = "amp.mctea.proxy.ClientProxy", serverSide = "amp.mctea.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
 	
