@@ -47,7 +47,9 @@ public class CupFull extends Item {
 
         if (!world.isRemote)
         {
-            player.curePotionEffects(stack);
+            player.clearActivePotions();
+            player.getFoodStats().addStats(2, 0);
+            player.setHealth(player.getHealth() + 2);
         }
 
         return stack.stackSize <= 0 ? new ItemStack(Item.bucketEmpty) : stack;

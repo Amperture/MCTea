@@ -10,7 +10,7 @@ public class TeaLeaf extends Item {
 		setCreativeTab(CreativeTabs.tabMisc);
 		setMaxStackSize(64);
 		setUnlocalizedName("teaLeaf");
-		setTextureName("amp_mctea:seeds_camellia");
+		setTextureName("amp_mctea:tea_leaf");
 	}
 
 }
