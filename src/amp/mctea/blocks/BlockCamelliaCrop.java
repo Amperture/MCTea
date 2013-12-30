@@ -1,16 +1,18 @@
 package amp.mctea.blocks;
 
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import amp.mctea.MCTea;
 
 
-public class BlockCamelliaCrop extends BlockCrops{
+public class BlockCamelliaCrop extends BlockCrops implements ITileEntityProvider{
 	public BlockCamelliaCrop(int id){
 		super(id);
 		setCreativeTab(CreativeTabs.tabMisc);
@@ -55,8 +57,14 @@ public class BlockCamelliaCrop extends BlockCrops{
 				//Look into alternative methods of damaging the Shears.
 				player.getHeldItem().damageItem(1, player);
 				
+				
 				return true;
 			}
 		} return false;
+	}
+
+	@Override
+	public TileEntity getBlockEntity(){
+		
 	}
 }
