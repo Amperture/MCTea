@@ -2,17 +2,22 @@ package amp.mctea.blocks;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import amp.mctea.MCTea;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
 public class BlockCamelliaCrop extends BlockCrops implements ITileEntityProvider{
+	
 	public BlockCamelliaCrop(int id){
 		super(id);
 		setCreativeTab(CreativeTabs.tabMisc);
@@ -28,6 +33,10 @@ public class BlockCamelliaCrop extends BlockCrops implements ITileEntityProvider
 	@Override
 	protected int getSeedItem(){
 		return MCTea.seedsCamellia.itemID;
+	}
+	
+	public boolean hasTileEntity(int metadata){
+		return true;
 	}
 	
 	
@@ -48,7 +57,7 @@ public class BlockCamelliaCrop extends BlockCrops implements ITileEntityProvider
 				
 				if ( world.isRemote ) return true;
 
-				world.setBlock(x, y, z, blockID, 1, 3);
+				world.setBlock(x, y, z, blockID, 6, 3);
 				EntityItem leafEntity = new EntityItem(world, x, y, z, new ItemStack(MCTea.teaLeaf.itemID, 1, 0));
 				world.spawnEntityInWorld(leafEntity);
 				world.playSoundAtEntity(player, "mob.sheep.shear", 1.0f, 1.2f);
@@ -63,8 +72,27 @@ public class BlockCamelliaCrop extends BlockCrops implements ITileEntityProvider
 		} return false;
 	}
 
-	@Override
-	public TileEntity getBlockEntity(){
-		
+	public TileEntity createNewTileEntity(World world){
+		return new TileEntityCamelliaCrop();
 	}
+	
+	public Icon[] iconArray;
+	public String[] textureArray = {"camellia_1", "camellia_1", "camellia_1", "camellia_1", "camellia_1", "camellia_1", "camellia_2", "camellia_3"};
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister icons){
+		this.iconArray = new Icon[textureArray.length];
+		
+		for (int i = 0; i < this.iconArray.length; i++){
+			this.iconArray[i] = icons.registerIcon("amp_mctea:" + textureArray[i]);
+		}
+	}
+	
+    @Override
+    @SideOnly(Side.CLIENT)
+    public Icon getIcon(int side, int meta)
+    {
+        return iconArray[meta];
+    }
 }
